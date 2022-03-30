@@ -1,0 +1,37 @@
+#service
+apiVersion: v1
+kind: Service
+metadata:
+  name: reactjs-service
+  namespace: projet-ydays
+spec:
+  selector:
+    app: reactjs-pod
+  ports:
+    - port: 80
+      targetPort: 80
+  type: ClusterIP
+---
+#deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reactjs-deployment
+  namespace: projet-ydays
+  labels:
+    app: reactjs
+spec:
+  selector:
+    matchLabels:
+      app: reactjs-pod
+  template:
+    metadata:
+      labels:
+        app: reactjs-pod
+    spec:
+      containers:
+      - name: reactjs-api
+        image: mczadowski/rusty:latest
+        ports:
+          - containerPort: 80
+      restartPolicy: Always
