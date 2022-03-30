@@ -9,7 +9,7 @@ spec:
     app: reactjs-pod
   ports:
     - port: 80
-      targetPort: 80
+      targetPort: 3000
   type: ClusterIP
 ---
 #deployment
@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
       - name: reactjs-api
-        image: mczadowski/rusty:latest
+        image: react-rusty:v1
         ports:
           - containerPort: 80
       restartPolicy: Always
