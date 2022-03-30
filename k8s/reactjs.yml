@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
       - name: reactjs-api
-        image: react-rusty:v1
+        image: mczadowski/rusty
         ports:
           - containerPort: 80
       restartPolicy: Always
