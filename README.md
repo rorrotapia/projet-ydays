@@ -27,7 +27,7 @@ helm install cert-manager jetstack/cert-manager --namespace cert-manager --creat
 #### a. Installation du projet
 Lancez la commande suivante pour installer le projet
 ```
-helm install projet ./projet-cloud -n projet-cloud
+helm install projet ./projet-ydays -n projet-ydays
 ```
 
 #### b. Fichiers manifests
