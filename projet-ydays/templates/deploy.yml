@@ -1,0 +1,38 @@
+#service
+apiVersion: v1
+kind: Service
+metadata:
+  name: reactjs-service
+  namespace: {{ .Release.Namespace }}
+spec:
+  selector:
+    app: reactjs-pod
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.reactjs.port }}
+  type: ClusterIP
+---
+#deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reactjs-deployment
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: reactjs
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: reactjs-pod
+  template:
+    metadata:
+      labels:
+        app: reactjs-pod
+    spec:
+      containers:
+      - name: reactjs-api
+        image: {{ .Values.image.repository }}
+        ports:
+          - containerPort: {{ .Values.service.port }}
+      restartPolicy: Always

@@ -2,6 +2,7 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: cert-issuer
+  namespace: cert-manager
 spec:
   secretName: acme-crt-secret
   dnsNames:
