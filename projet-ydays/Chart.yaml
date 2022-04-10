@@ -1,6 +1,6 @@
 apiVersion: v2
 name: projet-ydays
-description: A Helm chart for Kubernetes
+description: Projet Ydays
 
 # A chart can be either an 'application' or a 'library' chart.
 #
