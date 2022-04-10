@@ -30,7 +30,7 @@ helm install projet ./projet-cloud -n projet-cloud
 Le chart contient principalement les éléments suivants:
 
 - un fichier *Chart.yaml* qui définit les metadata du projet,
-- des ficchiers manifests *deploy.yaml* *service.yaml* *ingress.yaml*  utilisé pour la création des resources
+- des ficchiers manifests *deploy.yaml* *ingress.yaml*  utilisé pour la création des resources
 - un fichier *values.yaml* utilisé pour substituer les variables par des valeurs dynamiques
 - un fichier *NOTES.txt* qui donne des informations à la création de la release
 
@@ -40,7 +40,6 @@ $ tree manifests
 manifests
 ├── deploy.yaml
 ├── ingress.yaml
-├── service.yaml
 ```
 
 ## Membres
