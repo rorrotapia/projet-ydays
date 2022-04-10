@@ -32,7 +32,7 @@ Le chart contient principalement les éléments suivants:
 - un fichier *deploy.yaml*  utilisé pour la création du service et déploiement de l'app
 - un fichier *ingress.yaml* utilisé pour la création de l'ingress + certificat + clusterissuer
 - un fichier *values.yaml* utilisé pour substituer les variables par des valeurs dynamiques
-- 
+
 ## Membres
 
 - Rodrigo Tapia
