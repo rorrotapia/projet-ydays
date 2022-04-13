@@ -14,7 +14,7 @@ helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 ```
 Installation d'ingress controller
 ```
-helm install nginx-ingress ingress-nginx/ingress-nginx --namespace projet-ydays --create-namespace --set controller.replicaCount=2 --set controller.nodeSelector."kubernetes\.io/os"=linux
+helm install nginx-ingress ingress-nginx/ingress-nginx --namespace myingress-ydays --create-namespace --set controller.replicaCount=2 --set controller.nodeSelector."kubernetes\.io/os"=linux
 ```
 
 ## 2. BONUS: Instalation de certificat ssl
@@ -27,7 +27,7 @@ helm install cert-manager jetstack/cert-manager --namespace cert-manager --creat
 #### a. Installation du projet
 Lancez la commande suivante pour installer le projet
 ```
-helm install projet ./projet-ydays -n projet-ydays
+helm install projet ./projet-ydays -n projet-ydays --create-namespace
 ```
 
 #### b. Fichiers manifests
